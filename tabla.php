@@ -31,14 +31,42 @@
   
       <tr>
         <th>
-          <?php if($dato['estado']): ?>
-              <a  href="php/cambiarestado.php?id=<?php echo $dato['id']?>T<?php echo $dato['estado']?>" value="<?php echo $dato['estado']?>" name="estado" class="btn btn-danger btn-sm" title="Inhabilitar Producto" type="submit"><i class="fa fa-power-off"></i></a>
-          <?php endif ?>
-          <?php if(!$dato['estado']): ?>
-              <a  href="php/cambiarestado.php?id=<?php echo $dato['id']?>T<?php echo $dato['estado']?>" value="<?php echo $dato['estado']?>" name="estado" class="btn btn-success btn-sm" title="Habilitar Producto" type="submit"><i class="fa fa-power-off"></i></a>
-          <?php endif ?>
-          <button data-toggle="modal" data-target="#exampleModal<?php echo $dato['id'] ?>" title="Eliminar Producto" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
-          <button  data-toggle="modal" data-target="#editarModal<?php echo $dato['id'] ?>" title="Editar Producto" type="button" class="btn btn-info btn_modify btn-sm" name="id" ><b><i class="fa fa-edit "></i></b></button>
+        <?php if($dato['estado']): ?>
+          <a href="php/cambiarestado.php?id=<?php echo $dato['id']?>T<?php echo $dato['estado']?>" 
+             value="<?php echo $dato['estado']?>" 
+             name="estado" 
+             class="btn btn-danger btn-sm" 
+             title="Inhabilitar Producto">
+            <i class="fa fa-power-off"></i>
+          </a>
+        <?php endif ?>
+
+        <?php if(!$dato['estado']): ?>
+          <a href="php/cambiarestado.php?id=<?php echo $dato['id']?>T<?php echo $dato['estado']?>" 
+             value="<?php echo $dato['estado']?>" 
+             name="estado" 
+             class="btn btn-success btn-sm" 
+             title="Habilitar Producto">
+            <i class="fa fa-power-off"></i>
+          </a>
+        <?php endif ?>
+
+        <button 
+          data-toggle="modal" 
+          data-target="#exampleModal<?php echo $dato['id'] ?>" 
+          title="Eliminar Producto" 
+          class="btn btn-danger btn-sm">
+          <i class="fa fa-trash"></i>
+        </button>
+
+        <button 
+          data-toggle="modal" 
+          data-target="#editarModal<?php echo $dato['id'] ?>" 
+          title="Editar Producto" 
+          type="button" 
+          class="btn btn-info btn-sm">
+          <b><i class="fa fa-edit "></i></b>
+        </button>
           <!-- <a href="index.php"  class="btn btn-info btn-sm"title="Actualizar" type="button"><i class="fa fa-refresh"></i></a> -->
         </th>
 

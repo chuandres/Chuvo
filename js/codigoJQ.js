@@ -1,7 +1,6 @@
 
  var locarArr = new Array(), locarArr2;
 
-
  $(document).ready(function() {
   $(document).on('click', '', function() {
     var button_id = $(this).attr("id");
@@ -10,55 +9,63 @@
   });
   });
 
-function crearTabla2() {
-  $.confirm({
-    title: 'Añadir producto',
-    content: 
-      '<form method="POST">' +
-      '<div class="container" style="overflow: hidden; margin-top: 30px; background-color: #f1f1f1;">' +
-      '<div class="row">' +
-      '<div class="col-md-12">' +
-      '<h3>Nombre</h3>' +
-      '<input name="nombre" class="form-control" type="text" style="font-size: 32px;" required>' +
-      '<h3>Costo $</h3>' +
-      '<input name="costodolar" class="form-control" type="text" style="font-size: 32px;" required>' +
-      '<h3>Precio</h3>' +
-      '<input name="precio" class="form-control" type="text" style="font-size: 32px;" required>' +
-      '</div>' +
-      '<div class="col-md-12">' +
-      '<h3>Ganancia</h3>' +
-      '<input name="ganancia" class="form-control" type="text" style="font-size: 32px;" required>' +
-      '<h3>Almacén</h3>' +
-      '<input name="almacen" class="form-control" type="text" style="font-size: 32px;" value="SIN ASIGNAR" disabled>' +
-      '<input name="almacen" value="SIN ASIGNAR" type="hidden" required>' +
-      '</div>' +
-      '<div class="row" style="margin-top: 20px; width: 100%">' +
-      '<div class="col-md-12" style="text-align: center">' +
-      '<button id="btnAgregar" class="btn btn-primary" style="font-size: 42px; width: 350px; height: 80px; display:none;">Agregar</button>' +
-      '</div>' +
-      '<div class="col-md-12" style="text-align: center">' +
-      '' +
-      '</div>' +
-      '</div>' +
-      '</div>' +
-      '</div>' +
-      '</form>',
-    buttons: {
-      Agregar: {
-        text: '',
-        btnClass: 'btn-primary',
-        action: function() {$("#btnAgregar").trigger("click");
-        }
-      }, cerrar: {
-        text: '',
-        btnClass: 'btn-secondary',
-        action: function() {
+// function crearTabla2() {
+//   $.confirm({
+//     title: 'Añadir producto',
+//     content: 
+//       '<form method="POST">' +
+//       '<div class="container" style="overflow: hidden; margin-top: 30px; background-color: #f1f1f1;">' +
+//       '<div class="row">' +
+//       '<div class="col-md-12">' +
+//       '<h3>Nombre</h3>' +
+//       '<input name="nombre" class="form-control" type="text" style="font-size: 32px;" required>' +
+//       '<h3>Tasa $/€ factura (Bs)</h3>' +
+//       '<input name="costodolar" class="form-control" type="text" style="font-size: 32px;" required>' +
+//       '<h3>Precio del producto (Bs)</h3>' +
+//       '<input name="precio" class="form-control" type="text" style="font-size: 32px;" required>' +
+//       '</div>' +
+//       '<div class="col-md-12">' +
+//       '<h3>Ganancia</h3>' +
+//       '<input name="ganancia" class="form-control" type="text" style="font-size: 32px;" required>' +
+//       '<h3>Almacén</h3>' +
+//       '<input name="almacen" class="form-control" type="text" style="font-size: 32px;" value="SIN ASIGNAR" disabled>' +
+//       '<input name="almacen" value="SIN ASIGNAR" type="hidden" required>' +
+//       '</div>' +
+//       '<div class="row" style="margin-top: 20px; width: 100%">' +
+//       '<div class="col-md-12" style="text-align: center">' +
+//       '<button id="btnAgregar" class="btn btn-primary" style="font-size: 42px; width: 350px; height: 80px; display:none;">Agregar</button>' +
+//       '</div>' +
+//       '<div class="col-md-12" style="text-align: center">' +
+//       '' +
+//       '</div>' +
+//       '</div>' +
+//       '</div>' +
+//       '</div>' +
+//       '</form>',
+//     buttons: {
+//       Agregar: {
+//         text: '',
+//         btnClass: 'btn-primary',
+//         action: function() {$("#btnAgregar").trigger("click");
+//         }
+//       }, cerrar: {
+//         text: '',
+//         btnClass: 'btn-secondary',
+//         action: function() {
 
-        }
-      }
-    }
-  });
-}
+//         }
+//       }
+//     }
+//   });
+// }
+
+// $(document).ready(function() {
+//   $('#añadirProductoModal').on('submit', 'form', function(event) {
+//     event.preventDefault();
+//     // Aquí puedes agregar la lógica para manejar el formulario
+//     // Puedes utilizar AJAX para enviar los datos al servidor
+//   });
+// });
 
 function subirPantalla() {
    console.log("Función ejecutada");
@@ -138,25 +145,3 @@ function subirPantalla() {
           });
    }
    
-// $(document).ready(function() {
-//   $('#abrir-sidebar').click(function() {
-//     $('#sidebar').addClass('active');
-//     $('.fondo-oscuro').addClass('active');
-//   });
-
-//   // Cerrar el sidebar al hacer clic fuera de él
-//   $(document).on('click', function(event) {
-//     if (!$(event.target).closest('#sidebar').length && !$(event.target).closest('#abrir-sidebar').length && !$(event.target).closest('.fondo-oscuro').length) {
-//       $('#sidebar').removeClass('active');
-//       $('.fondo-oscuro').removeClass('active');
-//       $('body > *').css('opacity', 1); // Restablece la opacidad del contenido
-//     }
-//   });
-
-//   // Cerrar el sidebar al hacer clic en el fondo oscuro
-//   $('.fondo-oscuro').on('click', function() {
-//     $('#sidebar').removeClass('active');
-//     $(this).removeClass('active');
-//     $('body > *').css('opacity', 1); // Restablece la opacidad del contenido
-//   });
-// });

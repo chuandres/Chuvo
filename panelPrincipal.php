@@ -1,7 +1,7 @@
  <?php if(!$_GET):?>
     <form action="php/calcular.php">
-      <div class="container contenido">
-        <div class="row" style="overflow: hidden; margin-top: 30px; background-color: #f1f1f1; ">
+      <div class="container">
+        <div class="row" style=" margin-top: 30px; background-color: #f1f1f1; ">
           <div class="col-md-12">
             <div class="row" style="margin: 0px; padding: 25px;">
               <div class="row" >
@@ -71,7 +71,58 @@
                 </div>
                 <div class="row  "style="margin-top: 20px; width: 100%;">
                   <div class="col-md-4 col-lg-4 col-xl-4 col-sm-4">
-                    <button onclick="crearTabla2()" style="font-size: 42px; width: 100%; height: 80px;" class="btn btn-success" type="button"><i class="fa fa-cart-plus"></i> Añadir </button>
+                    <!-- <button onclick="crearTabla2()" style="font-size: 42px; width: 100%; height: 80px;" class="btn btn-success" type="button"><i class="fa fa-cart-plus"></i> Añadir </button> -->
+
+                    <!-- Botón para abrir el modal -->
+                    <button type="button" style="font-size: 42px; width: 100%; height: 80px;" class="btn btn-success" data-toggle="modal" data-target="#añadirProductoModal"><i class="fa fa-cart-plus"></i> Añadir                   </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="añadirProductoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Añadir producto</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <form method="POST" action="php/insertar.php">
+                              <div class="container" style="overflow: hidden; margin-top: 30px; background-color: #f1f1f1;">
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <h3>Nombre</h3>
+                                    <input name="nombre" class="form-control" type="text" style="font-size: 32px;" required>
+                                    <h3>Tasa $/€ factura (Bs)</h3>
+                                    <input name="costodolar" class="form-control" type="text" style="font-size: 32px;" required>
+                                    <h3>Precio del producto (Bs)</h3>
+                                    <input name="precio" class="form-control" type="text" style="font-size: 32px;" required>
+                                  </div>
+                                  <div class="col-md-12">
+                                    <h3>Ganancia</h3>
+                                    <input name="ganancia" class="form-control" type="text" style="font-size: 32px;" required>
+                                    <h3>Almacén</h3>
+                                    <input name="almacen" class="form-control" type="text" style="font-size: 32px;" value="SIN ASIGNAR" disabled>
+                                    <input name="almacen" value="SIN ASIGNAR" type="hidden" required>
+                                  </div>
+                                </div>
+                              </div>
+                            <div class="modal-footer d-flex justify-content-end">
+                              <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">
+                              Cerrar
+                              </button>
+                              <button type="submit" class="btn btn-primary btn-lg">
+                              Agregar
+                              </button>
+                            </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
                   <div class="col-md-4 col-lg-4 col-xl-4 col-sm-4">
                     <button   onclick="superFind()" style="font-size: 37px; width: 100%; height: 80px;" class="btn btn-primary" type="button"><i class="fa fa-search"></i> Buscar: F3</button>
@@ -117,7 +168,7 @@
             <div class="col-md-6">
               <div class="row" style="width: 100%;">
                 <div class="col-md-3">
-                  <h3>Costo$</h3>
+                  <h3>Tasa del $/€ en la factura</h3>
                 </div>
                 <div class="col-md-9">
                    <input style="font-size: 32px;text-align: left;" class="form-control d-none" type="text" name="id" value="<?php echo $resultado_unico['id'] ?>">
